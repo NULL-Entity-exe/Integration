@@ -19,7 +19,11 @@ def integrate(coeffecientOf_x:float, degreeOf_x:int, numeratorConstant:float, de
 
         constant_numenator = (coeffecientOf_x * math.pow(((-1) * (factorConstant[i] / factorCoeffecientOf_x[i])), degreeOf_x)) + numeratorConstant
 
-        constant = constant_numenator / constant_denominator
+        try:
+            constant = constant_numenator / constant_denominator
+        except ZeroDivisionError:
+            return "Please input non-repeating factors in the denominator"
+        
         Constant = round(constant, 4)
 
         answer_partial += '[ ' + "(" + str(Constant) + ")" + ' * ' + "log|" + str(factorCoeffecientOf_x[i]) + 'x' + ' + ' + '(' +str(factorConstant[i]) + ')' + '|' + ' ]' + ' + '
@@ -118,5 +122,4 @@ while True:
             Answer = integrate(p, k, q, n, a, b)
 
 
-print('\n\nAnswer =', Answer)
-        
+print('\n\nAnswer =', Answer)  
