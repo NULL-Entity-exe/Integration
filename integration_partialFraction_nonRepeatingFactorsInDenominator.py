@@ -90,7 +90,33 @@ for i in range(n):
     a.append(ai)
     b.append(bi)
 
-Answer = integrate(p, k, q, n, a, b)
+while True:
+    # To make sure repeated fractors in the denominator are not entered
+    try:
+        Answer = integrate(p, k, q, n, a, b)
+        break
+    except ZeroDivisionError:
+        print("\nPlease input non-repeating factors in the denominator\n")
+
+        a = []
+        b = []
+
+        for i in range(n):
+            # To make sure a valid number is entered
+            while True:
+                try:
+                    ai = float(input(f"Enter the {i + 1} factor coefficient of x : "))
+                    bi = float(input(f"Enter the {i + 1} factor consant          : "))
+                    break
+
+                except ValueError:
+                    print("\nEnter a valid number\n")
+
+            a.append(ai)
+            b.append(bi)
+
+            Answer = integrate(p, k, q, n, a, b)
+
 
 print('\n\nAnswer =', Answer)
         
