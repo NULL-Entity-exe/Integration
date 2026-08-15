@@ -55,7 +55,6 @@ def main():
     a = []
     b = []
 
-
     # To make sure a valid number is entered
     while True:
         try:
@@ -74,7 +73,6 @@ def main():
 
         except ValueError:
             print("\nEnter a valid number\n")
-
 
     print()
 
