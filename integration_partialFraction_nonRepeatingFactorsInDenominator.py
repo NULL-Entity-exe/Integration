@@ -8,7 +8,7 @@ def integrate(coeffecientOf_x:float, degreeOf_x:int, numeratorConstant:float, de
     # To check whether can we use this type of partial fraction method to solve
     if degreeOfDenominator <= degreeOf_x:
         print("The degree of the denominator must be greater than the degree of numenator")
-        return 0
+        return None
     
     for i in range(degreeOfDenominator):
         for j in range(degreeOfDenominator):
@@ -138,3 +138,5 @@ def main():
 
 main()
         
+
+print("Press \'Enter\' to exit")
